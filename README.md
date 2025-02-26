@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resume Shortlist
 
-## Getting Started
+This project allows users to upload their resumes in PDF format, compare them to job descriptions, and apply for jobs or internships.
 
-First, run the development server:
+## Get Started
+
+To get started with this project, follow these steps:
+
+1. **Clone the Repository:**
+
+```bash
+git clone https://github.com/rohitp-18/resume-shortlist.git
+cd resume-shortlist
+```
+
+2. **Install Dependencies:**
+
+```bash
+npm install
+```
+
+3. **Run the Application:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open in Browser:**
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Upload and Compare Resume
 
-## Learn More
+- **Endpoint:** `/short`
+- **Method:** `POST`
+- **Description:** Upload a resume in PDF format and compare it to a job description.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Apply for a Job
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Endpoint:** `/job`
+- **Method:** `POST`
+- **Description:** Apply for a job using the uploaded resume.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Apply for an Internship
 
-## Deploy on Vercel
+- **Endpoint:** `/internship`
+- **Method:** `POST`
+- **Description:** Apply for an internship using the uploaded resume.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Upload Resume and Compare:**
+
+- Send a POST request to `/short` with the resume PDF and job description.
+
+2. **Apply for a Job:**
+
+- Send a POST request to `/job` with the necessary details.
+
+3. **Apply for an Internship:**
+
+- Send a POST request to `/internship` with the necessary details.
+
+## Example
+
+```bash
+# Upload and compare resume
+curl -X POST -F "resume=@path/to/resume.pdf" -F "job_description=Job description text" http://localhost:8000/short
+
+# Apply for a job
+curl -X POST -d "job_id=123" -d "resume_id=456" http://localhost:8000/job
+
+# Apply for an internship
+curl -X POST -d "internship_id=789" -d "resume_id=456" http://localhost:8000/internship
+```
+
+## License
+
+This project is licensed under the MIT License.
