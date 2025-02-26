@@ -9,13 +9,15 @@ import { Button } from "./ui/button";
 
 function JodDescription({
   setApply,
+  job,
 }: {
   setApply: React.Dispatch<React.SetStateAction<boolean>>;
+  job: any;
 }) {
   return (
     <DialogContent
       style={{ scrollbarWidth: "none" }}
-      className="sm:mix-w-full overflow-y-auto py-5 max-h-[95vh] min-w-[700px]"
+      className="m-2 overflow-y-auto py-5 max-h-[95vh] md:min-w-[700px] min-w-[95vw]"
     >
       <DialogHeader>
         <DialogTitle className="text-lg mb-0">Job Title</DialogTitle>

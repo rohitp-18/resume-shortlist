@@ -132,7 +132,7 @@ export default function Page() {
         </SidebarInset>
       </SidebarProvider>
       <Dialog open={open} onOpenChange={() => setOpen(false)}>
-        <JobDescription setApply={setApply} />
+        <JobDescription job={job} setApply={setApply} />
       </Dialog>
       <Dialog open={apply} onOpenChange={() => setApply(false)}>
         <Applyform job={job} setOpen={setApply} />
